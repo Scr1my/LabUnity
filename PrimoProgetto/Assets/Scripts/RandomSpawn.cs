@@ -8,7 +8,6 @@ public class RandomSpawn : MonoBehaviour
     public float maxX = 9.47f;
     public float minZ = -4.8f;
     public float maxZ = 4.32f;
-    public float maxValue = 10f;
     public int n;
 
     void Start()
@@ -17,12 +16,13 @@ public class RandomSpawn : MonoBehaviour
         {
             
             bool check = false;
+            int c = 0;  //provvisorio per far funzionare il progetto
             do
             {
                 Vector3 coord = RandomVector3(minX, maxX, minZ, maxZ);
                 Vector3 spawnPos = coord;
 
-                Collider[] colliders = Physics.OverlapSphere(spawnPos, 0.2f);
+                Collider[] colliders = Physics.OverlapSphere(spawnPos, 0.000002f);
 
                 if (colliders.Length > 0)
                 {
@@ -32,9 +32,10 @@ public class RandomSpawn : MonoBehaviour
                 {
                     Instantiate(coinPrefab, spawnPos, Quaternion.identity);
                     check = true;
+                    break;
                 }
-            } while (check);
-            
+                c++;
+            } while (c < 3);
         }
     }
 
