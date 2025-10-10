@@ -1,19 +1,19 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] public GameObject door;
+    [SerializeField] public GameObject menuUI;
     [SerializeField] public AudioSource BGMusic;
     void Start()
     {
         BGMusic.Play();
         PlayerPrefs.SetInt("score", 0);
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MainMenu()
     {
-        
+        SceneManager.LoadScene("MainMenu");
     }
 }

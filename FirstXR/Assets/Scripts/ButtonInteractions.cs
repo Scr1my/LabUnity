@@ -4,19 +4,16 @@ public class ButtonInteractions : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
     private GameObject door;
+    private GameObject menuUI;
     void Start()
     {
         door = gameManager.door;
+        menuUI = gameManager.menuUI;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void OpenDoor()
     {
         door.transform.rotation = Quaternion.Euler(0, 90, 0);
-    }
+    }    
 }

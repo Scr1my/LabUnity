@@ -14,6 +14,7 @@ public class ButtonCollisions : MonoBehaviour
         if (collision.gameObject.tag.Equals("keycard"))
         {
             door.transform.rotation = Quaternion.Euler(0, 90, 0);
+            this.gameObject.GetComponent<Renderer>().material.color = Color.green;
         }
     }
 }
