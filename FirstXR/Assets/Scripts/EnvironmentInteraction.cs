@@ -4,7 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using static UnityEngine.Rendering.GPUSort;
 
-public class EnvironmentInteraction : MonoBehaviour
+public class EnvironmentInteraction : MonoBehaviour, EnvironentControl
 {
     private XRBaseInteractable interactable;
     [SerializeField] private ScoreManager scoreManager;
